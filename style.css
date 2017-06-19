@@ -46,8 +46,33 @@ nav{
     position: absolute;
     left: 0;
     width: 100vw;
-    height: 80px;
+    height: 90px;
+    background-color: #333;
 } 
+.depth1 ul{
+    width: 1200px;
+    height: 80px;
+    margin: 0 auto;
+}
+.depth1 ul li{
+    float: left;
+    width: 86px;
+    height: 86px;
+    text-align: center;
+    margin: 0 15px;
+}
+.depth1 ul li a{
+    display: block;
+}
+.icon{
+    width: 46px;
+    height: 54px;
+    margin: 0 auto;
+    background: url(images/macbook_dark_large.svg) no-repeat center center;
+}
+.icon-name{
+    font-size: 0.9em;
+}
 
 @media screen and (max-width: 960px){
     
