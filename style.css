@@ -1,0 +1,60 @@
+*{
+    margin:0; 
+    padding: 0;
+    font-family: font92685;
+}
+li{ list-style: none; }
+a{ text-decoration: none; }
+
+.home{
+    width: 1200px;
+    height: 50px;
+    margin: 15px auto;
+    background: url(images/Apple_logo_black.svg) no-repeat center center / contain;
+}
+nav{
+    height: 48px;
+    background-color: rgba(0,0,0,.88);
+}
+.globalnav{
+    max-width: 1200px;
+    height: 48px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.globalnav li{
+}
+.globalnav li a{
+    line-height: 44px;
+    color: white;
+    font-family: font92731;
+}
+.globalnav li:nth-child(7) a{
+    display: block;
+    width: 16px;
+    height: 44px;
+    background: url(images/search_large.svg) no-repeat center center;
+}
+.globalnav li:nth-child(8) a{
+    display: block;
+    width: 20px;
+    height: 44px;
+    background: url(images/bag_large.svg) no-repeat center center;
+}
+.depth1{
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    height: 80px;
+} 
+
+@media screen and (max-width: 960px){
+    
+}/*501px~960px*/
+@media screen and (max-width: 500px){
+    
+}/*321px~500px*/
+@media screen and (max-width: 320px){
+    
+}
