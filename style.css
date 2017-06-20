@@ -10,7 +10,13 @@ a{ text-decoration: none; }
     width: 1200px;
     height: 50px;
     margin: 15px auto;
-    background: url(images/Apple_logo_black.svg) no-repeat center center / contain;
+}
+.home a{
+    display: block;
+    width: 100px;
+    height: 50px;
+    margin: 0 auto;
+    background: url(images/Apple_logo_black.svg) no-repeat center center / contain;    
 }
 nav{
     height: 48px;
@@ -23,10 +29,14 @@ nav{
     display: flex;
     justify-content: space-between;
 }
-.globalnav li{
+.globalnav > li{
+    width: 100%;
+    text-align: center;
 }
-.globalnav li a{
-    line-height: 44px;
+.globalnav > li > a{
+    display: block;
+    width: 100%;
+    line-height: 48px;
     color: white;
     font-family: font92731;
 }
@@ -34,44 +44,68 @@ nav{
     display: block;
     width: 16px;
     height: 44px;
+    margin: 0 auto;
     background: url(images/search_large.svg) no-repeat center center;
 }
 .globalnav li:nth-child(8) a{
     display: block;
     width: 20px;
     height: 44px;
+    margin: 0 auto;
     background: url(images/bag_large.svg) no-repeat center center;
 }
 .depth1{
     position: absolute;
     left: 0;
-    width: 100vw;
-    height: 90px;
+    width: 100%;
+    height: 0px;
     background-color: #333;
+    overflow: hidden;
+    transition: all .5s ease-in-out;
+}
+.globalnav > li:hover .depth1{
+    overflow: visible;
+    height: 100px;
 } 
 .depth1 ul{
     width: 1200px;
     height: 80px;
-    margin: 0 auto;
+    margin: 5px auto;
 }
 .depth1 ul li{
     float: left;
     width: 86px;
-    height: 86px;
+    height: 80px;
     text-align: center;
     margin: 0 15px;
 }
-.depth1 ul li a{
-    display: block;
+.depth1 figure{
+    margin: -10px auto 0;
 }
-.icon{
+.icon11{ 
+    background: url(images/macbook_dark_large.svg) no-repeat center center;
     width: 46px;
     height: 54px;
-    margin: 0 auto;
-    background: url(images/macbook_dark_large.svg) no-repeat center center;
+}
+.icon12{ 
+    background: url(images/macbookair_dark_large.svg) no-repeat center center;
+    width: 52px;
+    height: 54px;
+}
+.depth1 span{
+    display: block;
+}
+.new{
+    height: 20px;
+    line-height: 24px;
+    font-size: 0.66em;
+    color: orangered;
 }
 .icon-name{
+    height: 20px;
+    line-height: 18px;
     font-size: 0.9em;
+    color: white;
 }
 
 @media screen and (max-width: 960px){
