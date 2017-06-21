@@ -80,6 +80,7 @@ nav ul li span{
     margin: 0 auto;
 }
 .mltext{
+    font-family: 'Spoqa Han Sans';
     display: inline-block;
     color: white;
     font-size: 40px;
