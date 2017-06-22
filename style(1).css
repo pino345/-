@@ -1,12 +1,59 @@
 *{ margin: 0; padding: 0;}
 li{ list-style: none;}
 a{ text-decoration: none;}
+input[type="checkbox"]{ display: none;}
 
 header{
     width: 100%;
     height: 100vh;
     background: linear-gradient(to right, #eac0aa, #d2c0ac 7%, #2fbdb9 50%, #1a989d 70%, #023545);
     display: flex;
+}
+nav input:checked ~ nav ul{
+    display: block;
+}
+@media only screen and (max-width: 767px){
+    .menu-open-button{
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        text-align: center;
+        line-height: 80px;
+        transition: transform ease-out 0.2s;
+        transition-timing-function: cubic-bezier(0.175, 0.885,0.32,1.275);
+        transition-duration: 400ms;
+        transform: scale(1.1,1.1) translate(0,0);
+        cursor: pointer; 
+        }
+    .lines{
+        position: absolute;
+        width: 30px;
+        height: 3px;
+        background: #fff;
+        display: block;
+        transition: transform ease-out 0.2s;
+    }
+    .line-1{
+        transform: translate(0,-8px);
+    }
+    .line-2{
+        transform: translate(0,0);
+    }
+    .line-3{
+        transform: translate(0,8px);
+    }
+    .menu-open:checked ~ .menu-open-button .line-1{
+        transform: translate(0,0) rotate(45deg); 
+    }
+    .menu-open:checked ~ .menu-open-button .line-2{
+        transform: translate(0,0) scale(.1,1); 
+    }
+    .menu-open:checked ~ .menu-open-button .line-3{
+        transform: translate(0,0) rotate(-45deg); 
+    }
+    nav ul{
+        display: none;
+    }
 }
 nav{
     align-self: center;
@@ -30,7 +77,7 @@ nav ul li span{
 .icon1{
     width :46px;
     height: 36px;
-    background: url(images/macbook_dark_large.png);
+    background: url(images/macbook_dark_large.svg);
 }
 .icon2{
     width : 28px;
@@ -43,8 +90,8 @@ nav ul li span{
     background: url(images/iphone7_dark_large.svg);
 }
 .icon4{
-    width :25px;
-    height: 54px;
+    width :64px;
+    height: 60px;
     background: url(images/watch_nav_series_2_large.svg);
 }
 .icon5{
@@ -61,6 +108,7 @@ nav ul li span{
     width :16px;
     height: 44px;
     background: url(images/search_large.svg);
+    transform: scale(1.5);
 }
 .mainLogo{
     align-self: center;
@@ -104,10 +152,11 @@ nav ul li span{
   100%{background-position:100% 50%}
 }
 .bag{
+    cursor: pointer;
     width: 10%;
     height: 84px;
     background: url(images/shopping-bag.svg) no-repeat center center;
-    background-size: 15%;
+    background-size: 20%;
 }
 
 #firstFloor{
@@ -118,22 +167,113 @@ nav ul li span{
     width: 50%;
     height: 50vh;
     float: left;
+    overflow: hidden;
+    position: relative;
+}
+#firstFloor article a{
+    width: 100%;
+    height: 50vh;
+    float: left;
+    color: #333;
 }
 #leftTop{
-    background: url(images/leftTop.png) no-repeat center center;
+    background: #f2f2f2;  
+}
+.lt{
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+.topIpad{
+    width: 50%;
+    height: inherit;
+    position: absolute;
+    z-index: 10;
+}
+.botIpad{
+    width: 50%;
+    height: inherit;
+    position: absolute;
+}
+#leftTop span{
+    display: block;
+    width: 100%;
+    height: inherit;
+    transition: all 1s ease-in-out;
+}
+.tpImage{
+    background: url(images/apps_top_medium.png) no-repeat center center / contain;
+    transform: translateX(-30%);
+}
+.bpImage{
+    background: url(images/apps_medium.png) no-repeat center center / contain;
+    transform: translateX(30%);
+}
+#leftTop:hover .tpImage{
+    transform: translate(-200%);
+}
+#leftTop:hover .bpImage{
+    transform: translate(200%);
+}
+.ltHoverI{
+    background: url(images/hero_medium.jpg) no-repeat center center;
+    background-color: rgba(255,255,255,.5);
+    width: 100%;
+    height: inherit;
+    transform: translateY(-100%);
+    transition: all 1s ease-in-out;
+}
+#leftTop:hover .ltHoverI{
+    transform: translateY(0);
+}
+.ltHoverT{
+    text-align: center;
+    padding-right: 300px;
+    padding-bottom: 55px;
+    font-size: 30px;
+    font-weight: bold;
+    transform: translateY(0%);
+    transition: all 1s ease-in-out;
+}
+#leftTop:hover .ltHoverT{
+    transform: translateY(-100%);
 }
 #rightTop{
-    background: url(images/2017060817088042813_2.jpg) no-repeat center center /cover;
+}
+.ios11{
+    background: url(images/iphone_ios11_medium.jpg) no-repeat center center / contain;
+    width: 100%;
+    height: inherit;
+}
+.rtHoverT{
+    position: absolute;
+    
+    font-size: 30px;
+    font-weight: bold;
+    transition: all 1s ease-in-out;
+}
+#rightTop:hover .rtHoverT{
+    transform: translate(0%, -100%);
 }
 #leftBottom{
-    background: url(images/leftBottom.png) no-repeat center center;
+    background: #101010;
+}
+.mac{
+    background: url(images/display_break_large.jpg) no-repeat center center / contain;
+    width: 100%;
+    height: inherit;
 }
 #rightBottom{
-    background: url(images/rightBottom.png) no-repeat center center;
+}
+.sierra{
+    background: url(images/hero_sierra.jpg) no-repeat center center / contain;
+    width: 100%;
+    height: inherit;
 }
 #secondFloor{
     width: 100%;
     height: 100vh;
+    background: url(images/wwdc17_event_large.png) repeat
 }
 #secondFloor h2{
     text-align: center;
