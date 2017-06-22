@@ -22,11 +22,10 @@ nav input:checked ~ nav ul{
         transition: transform ease-out 0.2s;
         transition-timing-function: cubic-bezier(0.175, 0.885,0.32,1.275);
         transition-duration: 400ms;
-        transform: scale(1.1,1.1) translate(0,0);
         cursor: pointer; 
         }
     .lines{
-        position: absolute;
+        position: relative;
         width: 30px;
         height: 3px;
         background: #fff;
@@ -42,13 +41,13 @@ nav input:checked ~ nav ul{
     .line-3{
         transform: translate(0,8px);
     }
-    .menu-open:checked ~ .menu-open-button .line-1{
+    #mobileNav:checked ~ .menu-open-button .line-1{
         transform: translate(0,0) rotate(45deg); 
     }
-    .menu-open:checked ~ .menu-open-button .line-2{
+    #mobileNav:checked ~ .menu-open-button .line-2{
         transform: translate(0,0) scale(.1,1); 
     }
-    .menu-open:checked ~ .menu-open-button .line-3{
+    #mobileNav:checked ~ .menu-open-button .line-3{
         transform: translate(0,0) rotate(-45deg); 
     }
     nav ul{
