@@ -9,56 +9,11 @@ header{
     background: linear-gradient(to right, #eac0aa, #d2c0ac 7%, #2fbdb9 50%, #1a989d 70%, #023545);
     display: flex;
 }
-nav input:checked ~ nav ul{
-    display: block;
-}
-@media only screen and (max-width: 767px){
-    .menu-open-button{
-        position: absolute;
-        width: 80px;
-        height: 80px;
-        text-align: center;
-        line-height: 80px;
-        transition: transform ease-out 0.2s;
-        transition-timing-function: cubic-bezier(0.175, 0.885,0.32,1.275);
-        transition-duration: 400ms;
-        cursor: pointer; 
-        }
-    .lines{
-        position: relative;
-        width: 30px;
-        height: 3px;
-        background: #fff;
-        display: block;
-        transition: transform ease-out 0.2s;
-    }
-    .line-1{
-        transform: translate(0,-8px);
-    }
-    .line-2{
-        transform: translate(0,0);
-    }
-    .line-3{
-        transform: translate(0,8px);
-    }
-    #mobileNav:checked ~ .menu-open-button .line-1{
-        transform: translate(0,0) rotate(45deg); 
-    }
-    #mobileNav:checked ~ .menu-open-button .line-2{
-        transform: translate(0,0) scale(.1,1); 
-    }
-    #mobileNav:checked ~ .menu-open-button .line-3{
-        transform: translate(0,0) rotate(-45deg); 
-    }
-    nav ul{
-        display: none;
-    }
-}
-nav{
+header > nav{
     align-self: center;
     width: 10%;
 }
-nav ul li a{
+header > nav ul li a{
     color: white;
     margin: 30px 0;
     width: 145px;
@@ -66,7 +21,7 @@ nav ul li a{
     align-items: center;
     justify-content: space-between;
 }
-nav ul li span{
+header > nav ul li span{
     display: inline-block;
 }
 .line{
@@ -100,14 +55,13 @@ nav ul li span{
 }
 .icon6{
     width :46px;
-    height: 36px;
-    background: url(images/large-promo-repair-icon_2x.png) no-repeat center center /contain;
+    height: 46px;
+    background: url(images/large-promo-repair-icon_2x.svg) no-repeat center center / contain;
 }
 .icon7{
     width :16px;
     height: 44px;
     background: url(images/search_large.svg);
-    transform: scale(1.5);
 }
 .mainLogo{
     align-self: center;
@@ -157,7 +111,73 @@ nav ul li span{
     background: url(images/shopping-bag.svg) no-repeat center center;
     background-size: 20%;
 }
-
+@media only screen and (max-width: 756px){
+    header > nav{
+        align-self: flex-start;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0,0,0,.7);
+    }
+    .menu-open-button{
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        text-align: center;
+        line-height: 80px;
+        transition: transform ease-out 0.2s;
+        cursor: pointer; 
+    }
+    .lines{
+        position: absolute;
+        top: 50%;
+        left: 25%;
+        width: 40px;
+        height: 5px;
+        background: #fff;
+        display: block;
+        transition: transform ease-out 0.2s;
+    }
+    .line-1{
+        transform: translate(0,-12px);
+    }
+    .line-2{
+        transform: translate(0,0);
+    }
+    .line-3{
+        transform: translate(0,12px);
+    }
+    #mobileNav:checked ~ .menu-open-button .line-1{
+        transform: translate(0,0) rotate(45deg); 
+    }
+    #mobileNav:checked ~ .menu-open-button .line-2{
+        transform: translate(0,0) scale(.1,1); 
+    }
+    #mobileNav:checked ~ .menu-open-button .line-3{
+        transform: translate(0,0) rotate(-45deg); 
+    }
+    header > nav ul{
+        margin-top: 80px;
+        margin-left: 10px;
+    }
+    .line{
+        display: none;
+    }
+    .navi{
+        width: 50px;
+        height: 50px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .nvText{
+        white-space: nowrap;
+        font-size: 22px;
+    }
+    .bag{
+        width: 80px;
+        height: 80px;
+        background-size: 40%; 
+    }
+}
 #firstFloor{
     width: 100%;
     height: 100vh;
@@ -219,10 +239,12 @@ nav ul li span{
     background-color: rgba(255,255,255,.5);
     width: 100%;
     height: inherit;
+    opacity: 0;
     transform: translateY(-100%);
     transition: all 1s ease-in-out;
 }
 #leftTop:hover .ltHoverI{
+    opacity: 1;
     transform: translateY(0);
 }
 .ltHoverT{
@@ -272,14 +294,114 @@ nav ul li span{
 #secondFloor{
     width: 100%;
     height: 100vh;
-    background: url(images/wwdc17_event_large.png) repeat
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    background-color: rgba(0,0,0,1);
+    overflow: hidden;
 }
+#secondFloor:before{
+    content: "";
+    width: 100%;
+    height: 100vh;
+    background: url(images/wwdc17_event_large.png) repeat center center;
+    opacity: .4;
+    position: absolute;
+}
+
 #secondFloor h2{
+    position: relative;
     text-align: center;
     font-size: 32px;
-    margin-top: 40px;
+    font-size: 40px;
+    color: white;
+}
+#secondFloor > div{
+    width: 80%;
+    height: 60%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+#secondFloor article{
+    position: relative;
+    width: calc(30%);
+    height: 100%;
+    float: left;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+#secondFloor article:nth-child(2){
+    margin: 0 2%;
+}
+.newsImage{
+    height: 70%;
+}
+.newsHead{
+    position: absolute;
+    bottom: 30px;
+    left: 10px;
+    font-size: 16px;
+}
+#secondFloor span{
+    display: block;
+    color: black;
+}
+.title{
+    font-size: 150%;
+    font-weight: bold;  
+}
+#news1, #news3{
+    background-color: white;
+}
+#news2{
+    background-color: #111;
+}
+#news2 span{
+    color: white;
+}
+#news1 .newsImage{
+    background: url(images/wwdc_design_awards_2017_full.jpg.small.jpg) no-repeat center center / cover;
+}
+#news2 .newsImage{
+    background: url(images/wwdc_sj_keynote_tim_cook_opening_full.jpg.large.jpg) no-repeat center center / cover;
+}
+#news3 .newsImage{
+    background: url(images/appstore_banner_hello_full.jpg.medium.jpg) no-repeat left center / cover; 
 }
 footer{
     width: 100%;
-    height: 109px;
+    height: inherit;
+    background-color: #f2f2f2;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.shop{
+    border-bottom: 1px solid #d6d6d6;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+.shop span{
+    display: block;
+}
+.shop span:first-child a{
+    color: #0070c9;
+}
+.shop span:last-child a{
+    
+}
+.legal nav {
+    display: inline-block;
+}
+.legal nav ul li{
+    float: left;
+}
+.legal small{
+    display: block;
+}
+.licensee span{
+    white-space: nowrap;
+    font-size: 14px;
 }

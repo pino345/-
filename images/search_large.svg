@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="GLYPHS" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="16px" height="44px" viewBox="0 0 16 44" style="enable-background:new 0 0 16 44;" xml:space="preserve">
-<g id="Search">
-	<g>
-		<rect style="fill:none;" width="16" height="44"/>
-	</g>
-	<g>
-		<path style="fill:#FFFFFF;" d="M6.5,26.58c-3.35,0-6.08-2.73-6.08-6.08s2.73-6.08,6.08-6.08s6.08,2.73,6.08,6.08
-			S9.85,26.58,6.5,26.58z M6.5,15.58c-2.72,0-4.92,2.21-4.92,4.92s2.21,4.92,4.92,4.92s4.92-2.21,4.92-4.92S9.22,15.58,6.5,15.58z"
-			/>
-	</g>
-	<g>
-		
-			<rect x="12.18" y="23.57" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -15.1807 16.8505)" style="fill:#FFFFFF;" width="1.15" height="6.36"/>
-	</g>
-</g>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="16px" height="19px" viewBox="0 0 16 19" enable-background="new 0 0 16 19" xml:space="preserve">
+<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M16,18c-0.628-2.339-0.926-2.332-2-4c-0.333,0-0.667,0-1,0
+	c0.333-2,0.667-4,1-6c-0.333,0-0.667,0-1,0c-0.613-1.97-0.433-2.518-1-4C7.096,1.946,6.619,1.831,2,4c-2.054,4.904-2.169,5.381,0,10
+	c1.521,0.611,1.993,0.378,4,1c0,0.333,0,0.667,0,1c2-0.333,4-0.667,6-1c0,0.333,0,0.667,0,1C13.665,17.068,13.642,17.417,16,18z
+	 M9,13c-4.307-0.231-3.388-0.618-6-2c0.231-4.307,0.618-3.388,2-6c1.333,0,2.667,0,4,0c0.822,1.296,0.686,1.191,2,2
+	C10.769,11.307,10.382,10.388,9,13z"/>
 </svg>
