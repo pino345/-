@@ -61,7 +61,7 @@ header > nav ul li span{
 .icon7{
     width :46px;
     height: 46px;
-    background: url(images/search_large.png) no-repeat center center / contain;
+    background: url(images/search_large.svg) no-repeat center center / contain;
 }
 .mainLogo{
     align-self: center;
@@ -106,12 +106,12 @@ header > nav ul li span{
 }
 .bag{
     cursor: pointer;
-    width: 10%;
-    height: 84px;
+    width: 8%;
+    height: 80px;
     background: url(images/shopping-bag.svg) no-repeat center center;
-    background-size: 20%;
+    background-size: 30px; 
 }
-@media only screen and (max-width: 756px){
+@media only screen and (max-width: 768px) and (min-width: 321px){
     header > nav{
         width: 10%;
         height: 100vh;
@@ -211,7 +211,6 @@ header > nav ul li span{
     width: 100%;
     height: 50vh;
     float: left;
-    color: #333;
 }
 #leftTop{
     background: #f2f2f2;  
@@ -271,6 +270,7 @@ header > nav ul li span{
     padding-bottom: 55px;
     font-size: 30px;
     font-weight: bold;
+    white-space: nowrap;
     transform: translateY(0%);
     transition: all 1s ease-in-out;
 }
@@ -279,20 +279,82 @@ header > nav ul li span{
 }
 #rightTop{
 }
-.ios11{
-    background: url(images/iphone_ios11_medium.jpg) no-repeat center center / contain;
+.ios11T{
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    padding-top: 2%;
+    opacity: 1;
+    transform: translate(0,0);
+    transition: all 1s ease-in-out;
+    transition-timing-function: cubic-bezier(0.175, 0.885,0.32,1.275);
+}
+#rightTop:hover .ios11T{
+    transform: translate(0,50px);
+    opacity: 1;
+}
+.ios11I{
+    background: url(images/image_xlarge.jpg) no-repeat center center / cover;
+    width: 100%;
+    height: 80%;
+    position: absolute;
+    bottom: 0;
+    opacity: 1;
+    transform: translate(0,0);
+    transition: all 1s ease-in-out;
+}
+#rightTop:hover .ios11I{
+    opacity: .9;
+    filter: blur(2px);
+}
+.rtHoverI{
+    position: absolute;
+    top: 0;
+    background: url(images/2017060817088042813_2.png) no-repeat center center / cover;
+    filter: blur(2px);
+    opacity: .1;
     width: 100%;
     height: inherit;
+    opacity: 0;
+    transform: scale(1);
+    transition: all 1s ease-in-out;
+}
+#rightTop:hover .rtHoverI{
+    opacity: 1;
+    transform: scale(1.5);
 }
 .rtHoverT{
     position: absolute;
-    
+    bottom: -100%;
+    width: 100%;
+    text-align: center;
     font-size: 30px;
     font-weight: bold;
+    color: black;
+    opacity: 0;
     transition: all 1s ease-in-out;
 }
+.step{
+    z-index: 11;
+    display: inline-block;
+    background: url(images/step.gif) no-repeat center center / contain;
+    width: 100px;
+    height: 70px;
+    margin-bottom: -25px;
+}
+.rtHoverT ins{
+    display: inline-block;
+    font-size: 18px;
+    color: #0070c9;
+    width: 100%;
+    padding-bottom: 20px;
+}
 #rightTop:hover .rtHoverT{
-    transform: translate(0%, -100%);
+    bottom: 20%;
+    opacity: 1;
 }
 #leftBottom{
     background: #101010;
@@ -308,6 +370,19 @@ header > nav ul li span{
     background: url(images/hero_sierra.jpg) no-repeat center center / contain;
     width: 100%;
     height: inherit;
+}
+@media only screen and (max-width: 768px) and (min-width: 321px){
+    #firstFloor article{
+        width: 100%;
+        height: 50vh;
+        overflow: hidden;
+        position: relative;
+    }
+    #firstFloor article a{
+        width: 100%;
+        height: 50vh;
+        color: #333;
+    }
 }
 #secondFloor{
     width: 100%;
@@ -387,6 +462,22 @@ header > nav ul li span{
 }
 #news3 .newsImage{
     background: url(images/appstore_banner_hello_full.jpg.medium.jpg) no-repeat left center / cover; 
+}
+@media only screen and (max-width: 768px) and (min-width: 321px){
+    #secondFloor > div{
+        width: 85%;
+        height: 85%;
+        margin: 0 auto;
+        margin-bottom: 50px;
+        display: flex;
+        justify-content: space-between;
+    }
+    #secondFloor >div article{
+    width: calc(100%);
+    height: 30%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
 }
 footer{
     width: 100%;
