@@ -159,15 +159,16 @@ header > nav ul li span{
     }
     #mobileNav:checked ~ ul{
         opacity: 1;
-        width: 65vw;
+        width: 60vw;
         height: 100vh;
         box-sizing: border-box;
     }
     header > nav ul li a{
         position: relative;
-        width: 55vw;
+        width: 50vw;
         border-bottom: 1px solid white;
-        padding-bottom: 5px;
+        padding-bottom: 2px;
+        margin: 20px 0;
     }
     .line{
         display: none;
