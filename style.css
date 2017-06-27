@@ -145,7 +145,7 @@ header > nav ul li span{
     }
     header > nav ul{
         position: absolute;
-        width: 0%;
+        width: 0vw;
         height: 0vh;
         background: rgba(0,0,0,.7);
         z-index: 10;
@@ -157,7 +157,7 @@ header > nav ul li span{
     }
     #mobileNav:checked ~ ul{
         opacity: 1;
-        width: 70%;
+        width: 65vw;
         height: 100vh;
         box-sizing: border-box;
     }
