@@ -1,0 +1,166 @@
+header > nav{
+        height: 100vh;
+    }
+    .menu-open-button{
+        z-index: 11;
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        text-align: center;
+        line-height: 80px;
+        transition: transform ease-out 0.2s;
+        cursor: pointer; 
+    }
+    .lines{
+        position: absolute;
+        top: 50%;
+        left: 25%;
+        width: 30px;
+        height: 3px;
+        background: #fff;
+        display: block;
+        transition: transform ease-out 0.2s;
+    }
+    .line-1{
+        transform: translate(0,-8px);
+    }
+    .line-2{
+        transform: translate(0,0);
+    }
+    .line-3{
+        transform: translate(0,8px);
+    }
+    #mobileNav:checked ~ .menu-open-button .line-1{
+        transform: translate(0,0) rotate(45deg); 
+    }
+    #mobileNav:checked ~ .menu-open-button .line-2{
+        transform: translate(0,0) scale(.1,1); 
+    }
+    #mobileNav:checked ~ .menu-open-button .line-3{
+        transform: translate(0,0) rotate(-45deg); 
+    }
+    header > nav ul{
+        position: absolute;
+        width: 0%;
+        height: 0vh;
+        background: rgba(0,0,0,1);
+        z-index: 10;
+        padding-top: 80px;
+        padding-left: 20px;
+        overflow: hidden;
+        opacity: 0;
+        transition: all 1s ease-in-out;
+    }
+    #mobileNav:checked ~ ul{
+        opacity: 1;
+        width: 100%;
+        height: 100vh;
+        box-sizing: border-box;
+    }
+    header > nav ul li a{
+        position: relative;
+        width: 85%;
+        border-bottom: 1px solid white;
+        padding-bottom: 5px;
+    }
+    .line{
+        display: none;
+    }
+    .navi{
+        width: 50px;
+        height: 50px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .nvText{
+        white-space: nowrap;
+        font-size: 22px;
+    }
+    .mlImage{
+        width: 120px;
+        height: 120px;
+        background: url(images/Apple_logo_white.png) no-repeat center center / contain;
+    }
+    .mainLogo div{
+        width: 50vw;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .mltext{
+    font-family: 'Spoqa Han Sans';
+    display: inline-block;
+    color: white;
+    font-size: 10vw;
+    }
+    .bagImage{
+        display: block;
+        width: 9vw;
+        height: 10vh;
+        background: url(images/shopping-bag.svg) no-repeat center center;
+        background-size: 26px; 
+        cursor: pointer;
+    }
+#firstFloor article{
+        width: 100%;
+        height: 50vh;
+        overflow: hidden;
+        position: relative;
+    }
+    #firstFloor article a{
+        width: 100%;
+        height: 50vh;
+        color: #333;
+    }
+#secondFloor > div{
+        width: 85%;
+        height: 85%;
+        margin: 0 auto;
+        margin-bottom: 50px;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+    }
+    #secondFloor > div article{
+        width: 100%;
+        height: 31%;
+        box-sizing: border-box;
+        overflow: hidden;
+        position: relative;
+    }
+    #secondFloor article:nth-child(2){
+        margin: 0;
+    }
+    .newsImage{
+        width: 70%;
+        height: 100%;
+    }
+    .newsHead{
+        position: absolute;
+        bottom: 0;
+        left: 70%;
+        width: 30%;
+        height: 100%;
+        font-size: 16px;
+    }
+    #news1 .title{
+        font-size: 2.9vw; 
+    }
+    #news2 .title{
+        font-size: 3.4vw; 
+    }
+    #news3 .title{
+        font-size: 3.3vw; 
+    }
+.shop span{
+        font-size: 2vw;
+    }
+    .legal nav {
+        font-size: 1.7vw;
+        font-weight: 600;
+    }
+    .legal small{
+        font-size: 1.6vw;
+    }
+    .licensee span{
+        font-size: 1.9vw;
+    }
