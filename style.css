@@ -168,7 +168,7 @@ header > nav ul li span{
     }
     header > nav ul li a{
         position: relative;
-        width: 45vw;
+        width: 42vw;
         border-bottom: 1px solid white;
         padding-bottom: 2px;
         margin: 20px 0;
@@ -499,6 +499,19 @@ header > nav ul li span{
         width: 100%;
         height: 50vh;
         color: #333;
+    }
+    #leftTop:active .tpImage{
+        transform: translate(-200%);
+    }
+    #leftTop:active .bpImage{
+        transform: translate(200%);
+    }
+    #leftTop:active .ltHoverI{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    #leftTop:active .ltHoverT{
+        transform: translateY(-100%);
     }
 }
 @media only screen and (max-width: 321px){
