@@ -1,6 +1,6 @@
 *{ margin: 0; padding: 0;}
 li{ list-style: none;}
-a{ text-decoration: none;}
+a{ text-decoration: none; color: #222;}
 input[type="checkbox"]{ display: none;}
 
 header{
@@ -28,40 +28,40 @@ header > nav ul li span{
     width: 15%;
     border: 2px solid white;
 }
+.navi{
+    width: 50px;
+    height: 50px;
+}
 .icon1{
-    width :46px;
-    height: 36px;
-    background: url(images/macbook_dark_large.svg);
+    background: url(images/macbook_dark_large.svg) no-repeat center center / contain;
 }
 .icon2{
-    width : 28px;
-    height: 54px;
-    background: url(images/ipad_large.svg);
+    background: url(images/ipad_large.svg) no-repeat center center / contain;
 }
 .icon3{
-    width : 38px;
-    height: 54px;
-    background: url(images/iphone7_dark_large.svg);
+    background: url(images/iphone7_dark_large.svg) no-repeat center center / contain;
 }
 .icon4{
-    width :64px;
-    height: 60px;
-    background: url(images/watch_nav_series_2_large.svg);
+    background: url(images/watch_nav_series_2_large.svg) no-repeat center center / contain;
 }
 .icon5{
-    width :28px;
-    height: 37px;
-    background: url(images/apple_music_dark_large.svg);
+    background: url(images/apple_music_dark_large.svg) no-repeat center center / contain;
 }
 .icon6{
-    width :46px;
-    height: 46px;
     background: url(images/large-promo-repair-icon_2x.svg) no-repeat center center / contain;
 }
 .icon7{
-    width :46px;
-    height: 46px;
     background: url(images/search_large.svg) no-repeat center center / contain;
+}
+.nvText{
+    width: 0%;
+    white-space: nowrap;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+}
+header nav ul li:hover .nvText{
+    width: 10%;
+    opacity: 1;
 }
 .mainLogo{
     align-self: center;
@@ -106,10 +106,10 @@ header > nav ul li span{
 }
 .bag{
     cursor: pointer;
-    width: 8%;
-    height: 80px;
+    width: 10%;
+    height: 100px;
     background: url(images/shopping-bag.svg) no-repeat center center;
-    background-size: 30px; 
+    background-size: 36px; 
 }
 @media only screen and (max-width: 768px) and (min-width: 321px){
     header > nav{
@@ -195,6 +195,132 @@ header > nav ul li span{
         height: 80px;
         background-size: 40%; 
     }
+}
+@media only screen and (max-width: 320px){
+    
+    header > nav{
+        z-index: 100;
+        width: 100vw;
+        height: 100vh;
+    }
+    .menu-open-button{
+        z-index: 11;
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        text-align: center;
+        line-height: 80px;
+        transition: transform ease-out 0.2s;
+        cursor: pointer; 
+    }
+    .lines{
+        position: absolute;
+        top: 50%;
+        left: 25%;
+        width: 40px;
+        height: 5px;
+        background: #fff;
+        display: block;
+        transition: transform ease-out 0.2s;
+    }
+    .line-1{
+        transform: translate(0,-12px);
+    }
+    .line-2{
+        transform: translate(0,0);
+    }
+    .line-3{
+        transform: translate(0,12px);
+    }
+    #mobileNav:checked ~ .menu-open-button .line-1{
+        transform: translate(0,0) rotate(45deg); 
+    }
+    #mobileNav:checked ~ .menu-open-button .line-2{
+        transform: translate(0,0) scale(.1,1); 
+    }
+    #mobileNav:checked ~ .menu-open-button .line-3{
+        transform: translate(0,0) rotate(-45deg); 
+    }
+    header > nav ul{
+        position: absolute;
+        width: 0%;
+        height: 0vh;
+        background: rgba(0,0,0,.7);
+        z-index: 10;
+        padding-top: 80px;
+        padding-left: 20px;
+        overflow: hidden;
+        opacity: 0;
+        transition: all 1s ease-in-out;
+    }
+    #mobileNav:checked ~ ul{
+        opacity: 1;
+        width: 35%;
+        height: 100vh;
+    }
+    header > nav ul li a{
+        position: relative;
+        width: 85%;
+        border-bottom: 1px solid white;
+        padding-bottom: 5px;
+    }
+    .line{
+        display: none;
+    }
+    .navi{
+        width: 50px;
+        height: 50px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .nvText{
+        white-space: nowrap;
+        font-size: 22px;
+    }
+.mainLogo{
+    align-self: center;
+    width: 80%;
+    margin-top: -50px;
+}
+.mlImage{
+    display: block;
+    width: 170px;
+    height: 170px;
+    margin: 10px auto;
+    background: url(images/Apple_logo_white.png) no-repeat center center;
+}
+.mainLogo div{
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+}
+.mltext{
+    font-family: 'Spoqa Han Sans';
+    display: inline-block;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+}
+.different{
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color: rgba(255,255,255,.9);   
+}
+.different b{
+    border-radius: 10px;
+    animation: tGradation 20s linear infinite;
+    background: linear-gradient(90deg, rgba(150,48,30,1) 0%,rgba(199,201,88,1) 10%,rgba(28,147,46,1) 20%,rgba(74,165,168,1) 30%,rgba(89,90,165,1) 40%,rgba(84,16,67,1) 50%,rgba(28,58,63,1) 60%,rgba(82,175,183,1) 70%,rgba(78,170,76,1) 80%,rgba(150,48,30,1) 90%,rgba(199,201,88,1) 100%);
+    background-size: 1000% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.bag{
+    cursor: pointer;
+    width: 10%;
+    height: 100px;
+    background: url(images/shopping-bag.svg) no-repeat center center;
+    background-size: 36px; 
+}
 }
 #firstFloor{
     width: 100%;
@@ -401,7 +527,6 @@ header > nav ul li span{
     opacity: .4;
     position: absolute;
 }
-
 #secondFloor h2{
     position: relative;
     text-align: center;
@@ -410,14 +535,14 @@ header > nav ul li span{
     color: white;
 }
 #secondFloor > div{
-    width: 80%;
+    width: 90%;
     height: 60%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     margin-bottom: 50px;
 }
-#secondFloor article{
+#secondFloor > div article{
     position: relative;
     width: calc(30%);
     height: 100%;
@@ -429,20 +554,25 @@ header > nav ul li span{
     margin: 0 2%;
 }
 .newsImage{
-    height: 70%;
+    height: 60%;
 }
 .newsHead{
     position: absolute;
     bottom: 30px;
     left: 10px;
-    font-size: 16px;
+    font-size: 1.2vw;
 }
 #secondFloor span{
     display: block;
-    color: black;
+}
+#news1 .cat, #news3 .cat{
+    color: #10C1E1;
+}
+#news2 .cat{
+    color: #FFA955;
 }
 .title{
-    font-size: 150%;
+    font-size: 1.5em;
     font-weight: bold;  
 }
 #news1, #news3{
@@ -454,6 +584,9 @@ header > nav ul li span{
 #news2 span{
     color: white;
 }
+#news2 cat{
+    color: #FFA955;
+}
 #news1 .newsImage{
     background: url(images/wwdc_design_awards_2017_full.jpg.small.jpg) no-repeat center center / cover;
 }
@@ -461,7 +594,7 @@ header > nav ul li span{
     background: url(images/wwdc_sj_keynote_tim_cook_opening_full.jpg.large.jpg) no-repeat center center / cover;
 }
 #news3 .newsImage{
-    background: url(images/appstore_banner_hello_full.jpg.medium.jpg) no-repeat left center / cover; 
+    background: url(images/appstore_banner_hello_full.png) no-repeat left center / cover; 
 }
 @media only screen and (max-width: 768px) and (min-width: 321px){
     #secondFloor > div{
@@ -478,45 +611,32 @@ header > nav ul li span{
         height: 31%;
         box-sizing: border-box;
         overflow: hidden;
+        position: relative;
     }
     #secondFloor article:nth-child(2){
-    margin: 0;
+        margin: 0;
     }
     .newsImage{
-    height: 70%;
-}
-.newsHead{
-    position: absolute;
-    bottom: 30px;
-    left: 10px;
-    font-size: 16px;
-}
-#secondFloor span{
-    display: block;
-    color: black;
-}
-.title{
-    font-size: 150%;
-    font-weight: bold;  
-}
-#news1, #news3{
-    background-color: white;
-}
-#news2{
-    background-color: #111;
-}
-#news2 span{
-    color: white;
-}
-#news1 .newsImage{
-    background: url(images/wwdc_design_awards_2017_full.jpg.small.jpg) no-repeat center center / cover;
-}
-#news2 .newsImage{
-    background: url(images/wwdc_sj_keynote_tim_cook_opening_full.jpg.large.jpg) no-repeat center center / cover;
-}
-#news3 .newsImage{
-    background: url(images/appstore_banner_hello_full.jpg.medium.jpg) no-repeat left center / cover; 
-}
+        width: 70%;
+        height: 100%;
+    }
+    .newsHead{
+        position: absolute;
+        bottom: 0;
+        left: 70%;
+        width: 30%;
+        height: 100%;
+        font-size: 16px;
+    }
+    #news1 .title{
+        font-size: 2.9vw; 
+    }
+    #news2 .title{
+        font-size: 3.4vw; 
+    }
+    #news3 .title{
+        font-size: 3.3vw; 
+    }
 }
 footer{
     width: 100%;
@@ -542,14 +662,35 @@ footer{
 }
 .legal nav {
     display: inline-block;
+    font-size: .8vw;
+    font-weight: 600;
 }
 .legal nav ul li{
     float: left;
+    padding: 0 10px;
+}
+.legal nav ul li:first-child{
+    padding-left: 0;
 }
 .legal small{
     display: block;
 }
 .licensee span{
     white-space: nowrap;
-    font-size: 14px;
+    font-size: 0.8vw;
+}
+@media only screen and (max-width: 768px) and (min-width: 321px){
+    .shop span{
+        font-size: 2vw;
+    }
+    .legal nav {
+        font-size: 1.7vw;
+        font-weight: 600;
+    }
+    .legal small{
+        font-size: 1.6vw;
+    }
+    .licensee span{
+        font-size: 1.9vw;
+    }
 }
