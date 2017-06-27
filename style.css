@@ -159,16 +159,20 @@ header > nav ul li span{
     }
     #mobileNav:checked ~ ul{
         opacity: 1;
-        width: 60vw;
+        width: 50vw;
         height: 100vh;
         box-sizing: border-box;
     }
+    header > nav ul li{
+        height: 8vh;
+    }
     header > nav ul li a{
         position: relative;
-        width: 50vw;
+        width: 45vw;
         border-bottom: 1px solid white;
         padding-bottom: 2px;
         margin: 20px 0;
+        justify-content: flex-end;
     }
     .line{
         display: none;
@@ -182,6 +186,7 @@ header > nav ul li span{
     .nvText{
         white-space: nowrap;
         font-size: 22px;
+        margin-left: 15px;
     }
     .mlImage{
         width: 150px;
