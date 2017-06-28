@@ -521,7 +521,7 @@ header > nav ul li a:hover .-bottom{
 }
 #rightTop:hover .ios11T{
     text-shadow: none;
-    top: 30%;
+    top: 20%;
 }
 .ios11I{
     background: url(images/image_xlarge.jpg) no-repeat center center / cover;
@@ -562,7 +562,7 @@ header > nav ul li a:hover .-bottom{
     padding-bottom: 20px;
 }
 #rightTop:hover .rtHoverT{
-    top: 50%;
+    top: 45%;
     opacity: 1;
 }
 #leftBottom{
@@ -735,6 +735,117 @@ header > nav ul li a:hover .-bottom{
             height: 100%;
         }
     }
+    @media screen and (max-width: 412px){
+        #firstFloor article{
+            width: 100%;
+        }
+        .tpImage{
+            background: url(images/apps_top_medium.png) no-repeat center center / contain;
+            transform: translateX(-50%);
+        }
+        .bpImage{
+            background: url(images/apps_medium.png) no-repeat center center / contain;
+            transform: translateX(10%);
+        }
+        #leftTop:hover .tpImage{
+            transform: translate(-50%);
+        }
+        #leftTop:hover .bpImage{
+            transform: translate(10%);
+        }
+        .ltHoverI, #leftTop:hover .ltHoverI{
+            display: none;
+        }    
+        .ltHoverT{
+            position: absolute;
+            top: 50%;
+            right: 3%;
+            z-index: 100;
+            text-align: right;
+            font-size: 4vw;
+            font-weight: bold;
+            transition: all 1s ease-in-out;
+        }
+        .ltHoverT span{
+            display: block;
+            font-size: 7vw;
+            font-weight: bold;
+        }
+        #leftTop:hover .ltHoverT{
+            top: 50%;
+            right: 3%;
+        }
+        .ios11T{
+            top: 23%;
+            text-shadow: none;
+            font-size: 10vw;
+        }
+        #rightTop:hover .ios11T{
+            top: 23%;
+        }
+        .ios11I{
+            bottom: 3vh;
+            height: 90%;
+            opacity: .45;
+        }
+        #rightTop:hover .ios11I{
+            transform: translate(0,0) scale(1);
+            opacity: .45;
+        }
+        .rtHoverT{
+            top: 45%;
+            font-size: 6vw;
+            opacity: 1;
+        }
+        .step{
+            width: 80px;
+            height: 50px;
+            margin-top: -50px;
+        }
+        .rtHoverT a, .rtHoverT ins{
+            display: none;
+        }
+        #rightTop:hover .rtHoverT{
+            top: 45%;
+        }
+        #leftBottom{
+            background: #fafafa;
+        }
+        #leftBottom:hover{
+            background-color: #fafafa;
+        }
+        .macI{
+            background: url(images/imac_large.jpg) no-repeat center center / contain;
+            width: 100%;
+            height: 100%;
+            bottom:0;
+            transition: none;
+        }
+        .lbHoverI{
+            background: url(images/imac_large.jpg) no-repeat center center / contain;
+            width: 100%;
+            height: 100%;
+            bottom:0;
+            transition: none;
+        }
+        #leftBottom:hover .lbHoverI, #leftBottom:hover .lbHoverT{
+            opacity: 1;
+        }
+        .lbHoverT{
+            top: 20%;
+            font-size: 8vw;
+            opacity: 1;
+            transition: none;
+        }
+        .lbHoverT span{
+            margin-bottom: 10px;
+        }
+        .watch{
+            background: url(images/hero_large.jpg) no-repeat center center / cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
 
 #secondFloor{
     width: 100%;
@@ -756,7 +867,6 @@ header > nav ul li a:hover .-bottom{
 #secondFloor h2{
     position: relative;
     text-align: center;
-    font-size: 32px;
     font-size: 40px;
     color: white;
 }
@@ -784,8 +894,8 @@ header > nav ul li a:hover .-bottom{
 }
 .newsHead{
     position: absolute;
-    bottom: 30px;
-    left: 10px;
+    top: 63%;
+    left: 2%;
     font-size: 1.2vw;
 }
 #secondFloor span{
@@ -822,6 +932,66 @@ header > nav ul li a:hover .-bottom{
 #news3 .newsImage{
     background: url(images/appstore_banner_hello_full.png) no-repeat left center / cover; 
 }
+    @media screen and (max-width: 768px) and (min-width: 413px){
+        #secondFloor h2{
+            font-size: 32px;
+            margin: 3% 0;
+        }
+        #secondFloor > div{
+            width: 85%;
+            height: 85%;
+            margin: 0 auto;
+            margin-bottom: 30px;
+            display: flex;
+            flex-flow: column;
+            justify-content: space-between;
+        }   
+        #secondFloor > div article{
+            width: 100%;
+            height: 31%;
+            box-sizing: border-box;
+            overflow: hidden;
+            position: relative;
+        }
+        #secondFloor article:nth-child(2){
+            margin: 0;
+        }
+        .newsImage{
+            width: 70%;
+            height: 100%;
+        }
+        .newsHead{
+            position: absolute;
+            top: 0;
+            left: 70%;
+            width: 30%;
+            height: 100%;
+            font-size: 3vw;
+            box-sizing: border-box;
+            padding-left: 3px;
+        }
+        #news2 .newsHead{
+            padding-right: 15px;
+        }
+        #news3 .newsHead{
+            padding-right: 8px;
+        }
+        #news1 .title{
+            font-size: 2.8vw;
+    }
+    #news2 .title{
+        font-size: 3vw; 
+    }
+    #news3 .title{
+        font-size: 3vw; 
+    }
+    #news2 .newsImage{
+        background: url(images/wwdc_sj_keynote_tim_cook_opening_full.jpg.large.jpg) no-repeat center top / cover;
+    }
+    #news3 .newsImage{
+        background: url(images/appstore_banner_hello_full.png) no-repeat left top / cover; 
+    }
+    }
 footer{
     width: 100%;
     height: inherit;
