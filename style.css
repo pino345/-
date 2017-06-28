@@ -6,51 +6,143 @@ input[type="checkbox"]{ display: none;}
 header{
     width: 100%;
     height: 100vh;
-    background: linear-gradient(to right, #eac0aa, #d2c0ac 7%, #2fbdb9 50%, #1a989d 70%, #023545);
     display: flex;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eac0aa+0,d2c0ac+7,2fbdb9+50,1a989d+70,023545+100 */
+    background: #eac0aa; /* Old browsers */
+    background: -moz-linear-gradient(left, #eac0aa 0%, #d2c0ac 7%, #2fbdb9 50%, #1a989d 70%, #023545 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #eac0aa 0%,#d2c0ac 7%,#2fbdb9 50%,#1a989d 70%,#023545 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #eac0aa 0%,#d2c0ac 7%,#2fbdb9 50%,#1a989d 70%,#023545 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eac0aa', endColorstr='#023545',GradientType=1 ); /* IE6-9 */
 }
 header > nav{
     align-self: center;
     width: 10%;
 }
 header > nav ul li a{
+    display: block;
     color: white;
-    margin: 30px 0;
+    padding: 0.7em calc(0.7em * 1.2);
+    margin: 10px 0;
+    margin-left: 5px;
     width: 160px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    position: relative;
+    border: 3px solid transparent;
 }
-header > nav ul li span{
-    display: inline-block;
-}
-.line{
-    width: 15%;
-    border: 2px solid white;
+header > nav ul li a span{
+    display: block;
 }
 .navi{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 160px;
+    transform: translate3d(0,0.7em,0);
+    transition: transform 0.4s cubic-bezier(.2,0,0,1) 0.4s;
+}
+.navi:before{
+    position: absolute;
+    content: "";
+    left: -10px;
+    right: 100%;
+    height: 3px;
+    background: white;
+    z-index: -1;
+    transition: transform 0.8s cubic-bezier(1,0,.37,1) 0.2s,
+      right 0.2s cubic-bezier(.04,.48,0,1) 0.6s,
+      left 0.4s cubic-bezier(.04,.48,0,1) 0.6s;
+    transform-origin: left;
+}
+.line{
+    background: white;
+    position: absolute;
+}
+.-right, .-left{
+    width: 3px;
+    bottom: -3px;
+    top: -3px;
+    transform: scale3d(1,0,1);
+}
+.-top, .-bottom{
+    height: 3px;
+    left: -3px;
+    right: -3px;
+    transform: scale3d(0,1,1);
+}
+.-right{
+    right: -3px;
+    transition: transform 0.1s cubic-bezier(1,0,.65,1.01) 0.23s;
+    transform-origin: top;
+}
+.-top{
+    top: -3px;
+    transition: transform 0.08s linear 0.43s;
+    transform-origin: left;
+}
+.-left{
+    left: -3px;
+    transition: transform 0.08s linear 0.51s;
+    transform-origin: bottom;
+}
+.-bottom{
+    bottom: -3px;
+    transition: transform 0.3s cubic-bezier(1,0,.65,1.01);
+    transform-origin: right;
+}
+header > nav ul li a:hover .navi{
+    transform: translate3d(0,0,0);
+    transition: transform 0.6s cubic-bezier(.2,0,0,1) 0.4s;
+}
+header > nav ul li a:hover .navi:before{
+    transform: scale3d(0,1,1);
+    right: -3px;
+    left: -3px;
+    transform-origin: right;
+    transition: transform 0.2s cubic-bezier(1,0,.65,1.01) 0.17s,
+      right 0.2s cubic-bezier(1,0,.65,1.01),
+      left 0s 0.3s;
+}
+header > nav ul li a:hover .line{
+    transform: scale3d(1,1,1);
+}
+header > nav ul li a:hover .-right{
+    transition: transform 0.1s cubic-bezier(1,0,.65,1.01) 0.2s;
+    transform-origin: bottom;
+}
+header > nav ul li a:hover .-top{
+    transition: transform 0.08s linear 0.4s;
+    transform-origin: right;
+}
+header > nav ul li a:hover .-left{
+    transition: transform 0.08s linear 0.48s;
+    transform-origin: top;
+}
+header > nav ul li a:hover .-bottom{
+    transition: transform 0.5s cubic-bezier(0,.53,.29,1) 0.56s;
+    transform-origin: left;
+}
+.nv{
     width: 50px;
     height: 50px;
 }
-.icon1{
+.-icon1{
     background: url(images/macbook_dark_large.svg) no-repeat center center / contain;
 }
-.icon2{
+.-icon2{
     background: url(images/ipad_large.svg) no-repeat center center / contain;
 }
-.icon3{
+.-icon3{
     background: url(images/iphone7_dark_large.svg) no-repeat center center / contain;
 }
-.icon4{
+.-icon4{
     background: url(images/watch_nav_series_2_large.svg) no-repeat center center / contain;
 }
-.icon5{
+.-icon5{
     background: url(images/apple_music_dark_large.svg) no-repeat center center / contain;
 }
-.icon6{
+.-icon6{
     background: url(images/large-promo-repair-icon_2x.svg) no-repeat center center / contain;
 }
-.icon7{
+.-icon7{
     background: url(images/search_large.svg) no-repeat center center / contain;
 }
 .mainLogo{
@@ -73,7 +165,6 @@ header > nav ul li span{
     margin: 0 auto;
 }
 .mltext{
-    font-family: 'Spoqa Han Sans';
     display: inline-block;
     color: white;
     font-size: 40px;
@@ -107,7 +198,227 @@ header > nav ul li span{
     background-size: 36px; 
     cursor: pointer;
 }
-  
+    @media screen and (max-width: 768px) and (min-width: 413px){
+        header > nav{
+            width: 10vw;
+            height: 100vh;
+        }
+        .menu-open-button{
+            z-index: 11;
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            text-align: center;
+            line-height: 80px;
+            transition: transform ease-out 0.2s;
+            cursor: pointer; 
+        }
+        .lines{
+            position: absolute;
+            top: 50%;
+            left: 25%;
+            width: 40px;
+            height: 3px;
+            background: #fff;
+            display: block;
+            transition: transform ease-out 0.2s;
+        }
+        .line-1{
+            transform: translate(0,-12px);
+        }
+        .line-2{
+            transform: translate(0,0);
+        }
+        .line-3{
+            transform: translate(0,12px);
+        }
+        #mobileNav:checked ~ .menu-open-button .line-1{
+            transform: translate(0,0) rotate(45deg); 
+        }
+        #mobileNav:checked ~ .menu-open-button .line-2{
+            transform: translate(0,0) scale(.1,1); 
+        }
+        #mobileNav:checked ~ .menu-open-button .line-3{
+            transform: translate(0,0) rotate(-45deg); 
+        }
+        header > nav ul{
+            position: absolute;
+            width: 0vw;
+            height: 0vh;
+            background: rgba(0,0,0,.7);
+            z-index: 10;
+            padding-top: 45px;
+            padding-left: 20px;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 1s ease-in-out;
+        }
+        #mobileNav:checked ~ ul{
+            opacity: 1;
+            width: 50vw;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        header > nav ul li a{
+            padding: 0;
+            margin: 10px 0;
+            margin-left: 5px;
+            width: 40vw;
+            border-bottom: 1px solid white;
+        }
+        .navi{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 40vw;
+            transform: none;
+            transition: none;
+        }
+        .navi:before, .line, header > nav ul li a:hover .navi:before, header > nav ul li a:hover .line{
+            display: none;
+        }
+        header > nav ul li a:hover .navi{
+            transform: none;
+            transition: none;
+        }
+        .nv{
+            width: 40px;
+            height: 40px;
+        }
+        .mlImage{
+            width: 150px;
+            height: 150px;
+            background: url(images/Apple_logo_white.png) no-repeat center center / contain;
+        }
+        .mainLogo div{
+            width: 50vw;
+            text-align: center;
+            margin: 0 auto;
+        }
+        .mltext{
+            font-size: 10vw;
+        }
+        .bagImage{
+            display: block;
+            width: 80px;
+            height: 80px;
+            padding-right: 5px;
+            background: url(images/shopping-bag.svg) no-repeat center center;
+            background-size: 34px; 
+            cursor: pointer;
+        }
+    }
+
+    @media screen and (max-width: 412px){
+        header > nav{
+            width: 10vw;
+            height: 100vh;
+        }
+        .menu-open-button{
+            z-index: 11;
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            text-align: center;
+            line-height: 80px;
+            transition: transform ease-out 0.2s;
+            cursor: pointer; 
+        }
+        .lines{
+            position: absolute;
+            top: 50%;
+            left: 25%;
+            width: 40px;
+            height: 3px;
+            background: #fff;
+            display: block;
+            transition: transform ease-out 0.2s;
+        }
+        .line-1{
+            transform: translate(0,-12px);
+        }
+        .line-2{
+            transform: translate(0,0);
+        }
+        .line-3{
+            transform: translate(0,12px);
+        }
+        #mobileNav:checked ~ .menu-open-button .line-1{
+            transform: translate(0,0) rotate(45deg); 
+        }
+        #mobileNav:checked ~ .menu-open-button .line-2{
+            transform: translate(0,0) scale(.1,1); 
+        }
+        #mobileNav:checked ~ .menu-open-button .line-3{
+            transform: translate(0,0) rotate(-45deg); 
+        }
+        header > nav ul{
+            position: absolute;
+            width: 0vw;
+            height: 0vh;
+            background: rgba(0,0,0,.7);
+            z-index: 10;
+            padding-top: 45px;
+            padding-left: 20px;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 1s ease-in-out;
+        }
+        #mobileNav:checked ~ ul{
+            opacity: 1;
+            width: 70vw;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        header > nav ul li a{
+            padding: 0;
+            margin: 10px 0;
+            margin-left: 5px;
+            width: 60vw;
+            border-bottom: 1px solid white;
+        }
+        .navi{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 60vw;
+            transform: none;
+            transition: none;
+        }
+        .navi:before, .line, header > nav ul li a:hover .navi:before, header > nav ul li a:hover .line{
+            display: none;
+        }
+        header > nav ul li a:hover .navi{
+            transform: none;
+            transition: none;
+        }
+        .nv{
+            width: 40px;
+            height: 40px;
+        }
+        .mlImage{
+            width: 120px;
+            height: 120px;
+            background: url(images/Apple_logo_white.png) no-repeat center center / contain;
+        }
+        .mainLogo div{
+            width: 50vw;
+            text-align: center;
+            margin: 0 auto;
+        }
+        .mltext{
+            font-size: 10vw;
+        }
+        .bagImage{
+            display: block;
+            width: 80px;
+            height: 80px;
+            padding-right: 5px;
+            background: url(images/shopping-bag.svg) no-repeat center center;
+            background-size: 34px; 
+            cursor: pointer;
+        }
+    }
 #firstFloor{
     width: 100%;
     height: 100vh;
@@ -202,13 +513,13 @@ header > nav ul li span{
     background-color: transparent;
     padding-top: 2%;
     opacity: 1;
-    transform: translate(0,0);
+    transform: translateY(0);
     transition: all 1s ease-in-out;
     transition-timing-function: cubic-bezier(0.175, 0.885,0.32,1.275);
 }
 #rightTop:hover .ios11T{
     text-shadow: none;
-    transform: translate(0,10px);
+    transform: translateY(120%);
 }
 .ios11I{
     background: url(images/image_xlarge.jpg) no-repeat center center / cover;
@@ -216,33 +527,16 @@ header > nav ul li span{
     height: 80%;
     position: absolute;
     bottom: 0;
-    opacity: 1;
-    transform: translate(0,0);
+    transform: translate(0,0) scale(1);
     transition: all 1s ease-in-out;
 }
 #rightTop:hover .ios11I{
-    opacity: .9;
-    filter: blur(2px);
-}
-.rtHoverI{
-    position: absolute;
-    top: 0;
-    background: url(images/2017060817088042813_2.png) no-repeat center center / cover;
-    filter: blur(2px);
-    opacity: .1;
-    width: 100%;
-    height: inherit;
-    opacity: 0;
-    transform: scale(1);
-    transition: all 1s ease-in-out;
-}
-#rightTop:hover .rtHoverI{
-    opacity: 1;
-    transform: scale(1.5);
+    transform: translate(0,0) scale(2);
+    opacity: .69;
 }
 .rtHoverT{
     position: absolute;
-    bottom: -100%;
+    bottom: 0%;
     width: 100%;
     text-align: center;
     font-size: 30px;
@@ -267,16 +561,55 @@ header > nav ul li span{
     padding-bottom: 20px;
 }
 #rightTop:hover .rtHoverT{
-    bottom: 0%;
+    bottom: 10%;
     opacity: 1;
 }
 #leftBottom{
-    background: #101010;
+    background: #1a1a1a;
 }
-.mac{
-    background: url(images/display_break_large.jpg) no-repeat center center / contain;
+.macI{
+    position: absolute;
+    bottom: 10px;
+    background: url(images/179.png) no-repeat center center / contain;
     width: 100%;
-    height: inherit;
+    height: 90%;
+    opacity: 1;
+    transition: all 1s ease-in-out;
+}
+#leftBottom:hover .macI{
+    opacity: 0;
+}
+.lbHoverI{
+    position: absolute;
+    bottom: 10px;
+    background: url(images/storage_break_large.png) no-repeat center center / contain;
+    width: 100%;
+    height: 90%;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+#leftBottom:hover{
+    background-color: #101010;
+}
+#leftBottom:hover .lbHoverI, #leftBottom:hover .lbHoverT{
+    opacity: 1;
+}
+.lbHoverT{
+    position: absolute;
+    left: 0;
+    right: 0;
+    transform: translateY(50%);
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+.lbHoverT span{
+    display: block;
+    margin-bottom: 20px;
 }
 #rightBottom{
 }
