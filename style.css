@@ -47,10 +47,11 @@ header > nav ul li a span{
     height: 3px;
     background: white;
     z-index: -1;
-    transition: transform 0.8s cubic-bezier(1,0,.37,1) 0.2s,
+    transition: all 0.8s cubic-bezier(1,0,.37,1) 0.2s,
       right 0.2s cubic-bezier(.04,.48,0,1) 0.6s,
       left 0.4s cubic-bezier(.04,.48,0,1) 0.6s;
     transform-origin: left;
+    opacity: 1;
 }
 .line{
     background: white;
@@ -93,13 +94,7 @@ header > nav ul li a:hover .navi{
     transition: transform 0.6s cubic-bezier(.2,0,0,1) 0.4s;
 }
 header > nav ul li a:hover .navi:before{
-    transform: scale3d(0,1,1);
-    right: -3px;
-    left: -3px;
-    transform-origin: right;
-    transition: transform 0.2s cubic-bezier(1,0,.65,1.01) 0.17s,
-      right 0.2s cubic-bezier(1,0,.65,1.01),
-      left 0s 0.3s;
+    opacity: 0;
 }
 header > nav ul li a:hover .line{
     transform: scale3d(1,1,1);
@@ -680,7 +675,7 @@ header > nav ul li a:hover .-bottom{
         }    
         .ltHoverT{
             position: absolute;
-            top: 50%;
+            top: 40%;
             right: 3%;
             z-index: 100;
             text-align: right;
@@ -694,7 +689,7 @@ header > nav ul li a:hover .-bottom{
             font-weight: bold;
         }
         #leftTop:hover .ltHoverT{
-            top: 50%;
+            top: 40%;
             right: 3%;
         } 
         .ios11T{
@@ -960,6 +955,12 @@ header > nav ul li a:hover .-bottom{
 }
 #secondFloor article:nth-child(2){
     margin: 0 2%;
+}
+#secondFloor >div article a{
+    width: 100%;
+    height: 100%;
+    display: block;
+    box-sizing: border-box;
 }
 .newsImage{
     position: absolute;
