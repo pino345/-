@@ -619,6 +619,20 @@ header > nav ul li a:hover .-bottom{
     width: 100%;
     height: 100%;
 }
+.rbHoverI{
+    background: url(images/logo_watch_series_2_large.png) no-repeat center center;
+}
+.rbHoverT{
+    position: absolute;
+    bottom: 35%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+    color: white;
+}
     @media screen and (max-width: 768px) and (min-width: 413px){
         #firstFloor article{
             width: 100%;
@@ -885,6 +899,7 @@ header > nav ul li a:hover .-bottom{
             width: 100%;
             height: 100%;
         }
+        
     }
 
 #secondFloor{
@@ -972,7 +987,7 @@ header > nav ul li a:hover .-bottom{
     background: url(images/wwdc_sj_keynote_tim_cook_opening_full.jpg.large.jpg) no-repeat center center / cover;
 }
 #news3 .newsImage{
-    background: url(images/homepod_white_shelf_inline.jpg.large.jpg) no-repeat left center / cover; 
+    background: url(images/homepod_white_shelf_inline.jpg.large.jpg) no-repeat center center / cover; 
 }
 #news1:hover{
     border: 1px solid black;
@@ -984,8 +999,19 @@ header > nav ul li a:hover .-bottom{
     transform: translate(0px,-5px);
     box-shadow: 0px 7px 0px #666, 0px 14px 0px #aaa;
 }
+#news3:hover{
+    border: 1px solid black;
+    transform: translate(-5px,-5px);
+    box-shadow: 7px 7px 0px #666, 14px 14px 0px #aaa;
+}
 #news1:hover .newsImage{
     background: url(images/wwdc-design-awards-blackbox.gif) no-repeat center center / cover;
+}
+#news2:hover .newsImage{
+    background: url(images/wwdc) no-repeat center center / cover;
+}
+#news3:hover .newsImage{
+    background: url(images/HomePod-cc-us-_Reveal_1280x720h.gif) no-repeat center center / cover;
 }
     @media screen and (max-width: 768px) and (min-width: 413px){
             #secondFloor h2{
@@ -1039,13 +1065,27 @@ header > nav ul li a:hover .-bottom{
             }
             #news3 .title{
                 font-size: 2.8vw; 
-        }
-        #news2 .newsImage{
-            background: url(images/wwdc_sj_keynote_tim_cook_opening_full.jpg.large.jpg) no-repeat center top / cover;
-        }
-        #news3 .newsImage{
-            background: url(images/appstore_banner_hello_full.png) no-repeat left top / cover; 
-        }
+            }
+            #news2 .newsImage{
+                background: url(images/wwdc_sj_keynote_tim_cook_opening_full.jpg.large.jpg) no-repeat center top / cover;
+            }
+            #news3 .newsImage{
+                background: url(images/homepod_white_shelf_inline.jpg.large.jpg) no-repeat center center / cover; 
+            }
+            #news1:hover, #news2:hover, #news3:hover{
+                border: none;
+                transform: translate(0px,0px);
+                box-shadow: none;
+            }
+            #news1:hover .newsImage{
+                background: url(images/wwdc-design-awards-cube.jpg) no-repeat center center / cover;
+            }
+            #news2:hover .newsImage{
+                background: url(images/wwdc_sj_keynote_tim_cook_opening_full.jpg.large.jpg) no-repeat center center / cover;
+            }
+            #news3:hover .newsImage{
+                background: url(images/homepod_white_shelf_inline.jpg.large.jpg) no-repeat center center / cover; 
+            }    
     }
     @media screen and (max-width: 412px){
             #secondFloor h2{
@@ -1104,8 +1144,22 @@ header > nav ul li a:hover .-bottom{
                 background: url(images/wwdc_sj_keynote_tim_cook_opening_full.jpg.large.jpg) no-repeat center top / cover;
             }
             #news3 .newsImage{
-                background: url(images/appstore_banner_hello_full.png) no-repeat left top / cover; 
+                background: url(images/homepod_white_shelf_inline.jpg.large.jpg) no-repeat center center / cover; 
             }
+            #news1:hover, #news2:hover, #news3:hover{
+                border: none;
+                transform: translate(0px,0px);
+                box-shadow: none;
+            }
+            #news1:hover .newsImage{
+                background: url(images/wwdc-design-awards-cube.jpg) no-repeat center center / cover;
+            }
+            #news2:hover .newsImage{
+                background: url(images/wwdc_sj_keynote_tim_cook_opening_full.jpg.large.jpg) no-repeat center center / cover;
+            }
+            #news3:hover .newsImage{
+                background: url(images/homepod_white_shelf_inline.jpg.large.jpg) no-repeat center center / cover; 
+            }  
     }
 footer{
     width: 100%;
