@@ -722,6 +722,7 @@ header > nav ul li a:hover .-bottom{
             opacity: 1;
         }
         .lbHoverT{
+            transform: translateY(100%);
             font-size: 7.5vw;
             opacity: 1;
             transition: none;
@@ -766,6 +767,17 @@ header > nav ul li a:hover .-bottom{
             font-weight: bold;
             transition: all 1s ease-in-out;
         }
+        .ltHoverT:after{
+            content:"더보기";
+            position: absolute;
+            right: 0%;
+            bottom: -60%;
+            width: 17vw;
+            height: 4vh;
+            border: 1px solid black;
+            text-align: center;
+            line-height: 4vh;
+        }
         .ltHoverT span{
             display: block;
             font-size: 7vw;
@@ -776,9 +788,9 @@ header > nav ul li a:hover .-bottom{
             right: 3%;
         }
         .ios11T{
-            top: 23%;
+            top: 30%;
             text-shadow: none;
-            font-size: 10vw;
+            font-size: 7vw;
         }
         #rightTop:hover .ios11T{
             top: 23%;
@@ -794,8 +806,21 @@ header > nav ul li a:hover .-bottom{
         }
         .rtHoverT{
             top: 45%;
-            font-size: 6vw;
+            font-size: 4vw;
             opacity: 1;
+        }
+        .rtHoverT:after{
+            content:"더보기";
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 20vw;
+            height: 4vh;
+            border: 1px solid black;
+            text-align: center;
+            line-height: 4vh;
         }
         .step{
             width: 80px;
@@ -833,9 +858,24 @@ header > nav ul li a:hover .-bottom{
         }
         .lbHoverT{
             top: 20%;
-            font-size: 8vw;
+            font-size: 7vw;
             opacity: 1;
             transition: none;
+        }
+        .lbHoverT:after{
+            content:"더보기";
+            position: absolute;
+            bottom: -50%;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 20vw;
+            height: 4vh;
+            border: 1px solid white;
+            text-align: center;
+            line-height: 4vh;
+            font-size: 4vw;
+            box-shadow: 1px 1px 2px black;
         }
         .lbHoverT span{
             margin-bottom: 10px;
@@ -884,19 +924,22 @@ header > nav ul li a:hover .-bottom{
     height: 100%;
     float: left;
     box-sizing: border-box;
-    overflow: hidden;
 }
 #secondFloor article:nth-child(2){
     margin: 0 2%;
 }
 .newsImage{
+    position: absolute;
+    width: 100%;
     height: 60%;
+    z-index: 10;
 }
 .newsHead{
     position: absolute;
     top: 63%;
     left: 2%;
-    font-size: 1.2vw;
+    z-index: 10;
+    font-size: 1.2em;
 }
 #secondFloor span{
     display: block;
@@ -908,7 +951,6 @@ header > nav ul li a:hover .-bottom{
     color: #FFA955;
 }
 .title{
-    font-size: 1.5em;
     font-weight: bold;  
 }
 #news1, #news3{
@@ -924,73 +966,146 @@ header > nav ul li a:hover .-bottom{
     color: #FFA955;
 }
 #news1 .newsImage{
-    background: url(images/wwdc_design_awards_2017_full.jpg.small.jpg) no-repeat center center / cover;
+    background: url(images/wwdc-design-awards-cube.jpg) no-repeat center center / cover;
 }
 #news2 .newsImage{
     background: url(images/wwdc_sj_keynote_tim_cook_opening_full.jpg.large.jpg) no-repeat center center / cover;
 }
 #news3 .newsImage{
-    background: url(images/appstore_banner_hello_full.png) no-repeat left center / cover; 
+    background: url(images/homepod_white_shelf_inline.jpg.large.jpg) no-repeat left center / cover; 
+}
+#news1:hover{
+    border: 1px solid black;
+    transform: translate(5px,-5px);
+    box-shadow: -7px 7px 0px #333, -14px 14px 0px #111;
+}
+#news2:hover{
+    border: 1px solid black;
+    transform: translate(0px,-5px);
+    box-shadow: 0px 7px 0px #666, 0px 14px 0px #aaa;
+}
+#news1:hover .newsImage{
+    background: url(images/wwdc-design-awards-blackbox.gif) no-repeat center center / cover;
 }
     @media screen and (max-width: 768px) and (min-width: 413px){
-        #secondFloor h2{
-            font-size: 32px;
-            margin: 3% 0;
+            #secondFloor h2{
+                font-size: 32px;
+                margin: 3% 0;
+            }
+            #secondFloor > div{
+                width: 85%;
+                height: 85%;
+                margin: 0 auto;
+                margin-bottom: 30px;
+                display: flex;
+                flex-flow: column;
+                justify-content: space-between;
+            }   
+            #secondFloor > div article{
+                width: 100%;
+                height: 31%;
+                box-sizing: border-box;
+                overflow: hidden;
+                position: relative;
+            }
+            #secondFloor article:nth-child(2){
+                margin: 0;
+            }
+            .newsImage{
+                width: 70%;
+                height: 100%;
+            }
+            .newsHead{
+                position: absolute;
+                top: 0;
+                left: 70%;
+                width: 30%;
+                height: 100%;
+                font-size: 3vw;
+                box-sizing: border-box;
+                padding-left: 3px;
+            }
+            #news2 .newsHead{
+                padding-right: 15px;
+            }
+            #news3 .newsHead{
+                padding-right: 8px;
+            }
+            #news1 .title{
+                font-size: 2.8vw;
+            }
+            #news2 .title{
+                font-size: 3vw; 
+            }
+            #news3 .title{
+                font-size: 2.8vw; 
         }
-        #secondFloor > div{
-            width: 85%;
-            height: 85%;
-            margin: 0 auto;
-            margin-bottom: 30px;
-            display: flex;
-            flex-flow: column;
-            justify-content: space-between;
-        }   
-        #secondFloor > div article{
-            width: 100%;
-            height: 31%;
-            box-sizing: border-box;
-            overflow: hidden;
-            position: relative;
+        #news2 .newsImage{
+            background: url(images/wwdc_sj_keynote_tim_cook_opening_full.jpg.large.jpg) no-repeat center top / cover;
         }
-        #secondFloor article:nth-child(2){
-            margin: 0;
+        #news3 .newsImage{
+            background: url(images/appstore_banner_hello_full.png) no-repeat left top / cover; 
         }
-        .newsImage{
-            width: 70%;
-            height: 100%;
-        }
-        .newsHead{
-            position: absolute;
-            top: 0;
-            left: 70%;
-            width: 30%;
-            height: 100%;
-            font-size: 3vw;
-            box-sizing: border-box;
-            padding-left: 3px;
-        }
-        #news2 .newsHead{
-            padding-right: 15px;
-        }
-        #news3 .newsHead{
-            padding-right: 8px;
-        }
-        #news1 .title{
-            font-size: 2.8vw;
     }
-    #news2 .title{
-        font-size: 3vw; 
-    }
-    #news3 .title{
-        font-size: 3vw; 
-    }
-    #news2 .newsImage{
-        background: url(images/wwdc_sj_keynote_tim_cook_opening_full.jpg.large.jpg) no-repeat center top / cover;
-    }
-    #news3 .newsImage{
-        background: url(images/appstore_banner_hello_full.png) no-repeat left top / cover; 
-    }
+    @media screen and (max-width: 412px){
+            #secondFloor h2{
+                font-size: 32px;
+                margin: 3% 0;
+            }
+            #secondFloor > div{
+                width: 85%;
+                height: 85%;
+                margin: 0 auto;
+                margin-bottom: 30px;
+                display: flex;
+                flex-flow: column;
+                justify-content: space-between;
+            }   
+            #secondFloor > div article{
+                width: 100%;
+                height: 31%;
+                box-sizing: border-box;
+                overflow: hidden;
+                position: relative;
+            }
+            #secondFloor article:nth-child(2){
+                margin: 0;
+            }
+            .newsImage{
+                width: 70%;
+                height: 100%;
+            }
+            .newsHead{
+                position: absolute;
+                top: 0;
+                left: 70%;
+                width: 30%;
+                height: 100%;
+                font-size: 3vw;
+                box-sizing: border-box;
+                padding-left: 3px;
+            }
+            #news2 .newsHead{
+                padding-right: 15px;
+            }
+            #news3 .newsHead{
+                padding-right: 8px;
+            }
+            #news1 .title{
+                font-size: 3.2vw;
+            }
+            #news2 .title{
+                font-size: 3.2vw; 
+            }
+            #news3 .title{
+                font-size: 3vw; 
+            }
+            #news2 .newsImage{
+                background: url(images/wwdc_sj_keynote_tim_cook_opening_full.jpg.large.jpg) no-repeat center top / cover;
+            }
+            #news3 .newsImage{
+                background: url(images/appstore_banner_hello_full.png) no-repeat left top / cover; 
+            }
     }
 footer{
     width: 100%;
@@ -1001,22 +1116,31 @@ footer{
 }
 .shop{
     border-bottom: 1px solid #d6d6d6;
-    padding: 5px;
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 2px;
 }
 .shop span{
-    display: block;
+    display: inline-block;
 }
-.shop span:first-child a{
+.tell_tablet p{
+    display: none;
+}
+.reseller a{
     color: #0070c9;
 }
-.shop span:last-child a{
-    
+.shop > span:last-child a{
+    display: block;
+    background: black;
+    color: white;
+    padding: 4px 6px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    white-space: nowrap;
 }
 .legal nav {
     display: inline-block;
-    font-size: .8vw;
     font-weight: 600;
 }
 .legal nav ul li{
@@ -1031,5 +1155,50 @@ footer{
 }
 .licensee span{
     white-space: nowrap;
-    font-size: 0.8vw;
+    font-size: 13px;
 }
+    @media screen and (max-width: 768px) and (min-width: 413px){
+        .shop{
+            font-size: 14px;
+            border-bottom: 1px solid #333;
+        }
+        .tell p{
+            display: none;
+        }
+        .tell_tablet p{
+            display: block;
+        }
+        .legal nav {
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .licensee span{
+            white-space: nowrap;
+            font-size: 12px;
+        }
+    }
+    @media screen and (max-width: 412px){
+        .shop{
+            font-size: 14px;
+            border-bottom: 1px solid #333;
+        }
+        .tell p{
+            display: none;
+        }
+        .tell_tablet p{
+            display: block;
+            margin-left: -4px;
+        }
+        .legal nav {
+            font-size: 12px;
+            margin-top: 5px;
+        }
+        .legal nav ul li{
+            float: left;
+            padding: 0 8px;
+}
+        .licensee span{
+            white-space: nowrap;
+            font-size: 12px;
+        }
+    }
