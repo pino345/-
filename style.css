@@ -264,6 +264,7 @@ header > nav ul li a:hover .-bottom{
             margin: 10px 0;
             margin-left: 5px;
             width: 40vw;
+            height: 50px;
             border-bottom: 1px solid white;
         }
         .navi{
@@ -619,39 +620,36 @@ header > nav ul li a:hover .-bottom{
     width: 100%;
     height: 100%;
 }
+.watch:before{
+    content: "";
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    opacity: .5;
+}
 .watchT{
     position: absolute;
-    bottom: 50%;
+    bottom: 20%;
     width: 100%;
-    text-align: center;
+    text-align: left;
+    font-weight: bold;
+    font-size:  42px;
+    color: white;
+    padding-left: 10px;
+}
+.watchT span{
+    font-size: 24px;
 }
 .rbHoverI{
     position: absolute;
     bottom: 0%;
-    background: url(images/logo_watch_series_2_large.png) no-repeat center center;
-    width: 100%;
-    height: 20%;
-    opacity: 0;
-    transition: all 1s ease-in-out;
-}
-#rightBootm:hover .rbHoverI{
-    opacity: 1;
-}
-.rbHoverT{
-    position: absolute;
-    bottom: 35%;
     left: 0;
-    right: 0;
-    margin: 0 auto;
-    text-align: center;
-    font-weight: bold;
-    font-size: 50px;
-    color: white;
-    opacity: 0;
-    transition: all 1s ease-in-out;
-}
-#rightBootm:hover .rbHoverT{
-    opacity: 1;
+    background: url(images/logo_watch_series_2_large.png) no-repeat center center;
+    width: 184px;
+    height: 20%;
+    margin-left: 10px;
 }
     @media screen and (max-width: 768px) and (min-width: 413px){
         #firstFloor article{
@@ -1028,7 +1026,7 @@ header > nav ul li a:hover .-bottom{
     background: url(images/wwdc-design-awards-blackbox.gif) no-repeat center center / cover;
 }
 #news2:hover .newsImage{
-    background: url(images/wwdc) no-repeat center center / cover;
+    background: url(images/ezgif.com-video-to-gif.gif) no-repeat center center / cover;
 }
 #news3:hover .newsImage{
     background: url(images/HomePod-cc-us-_Reveal_1280x720h.gif) no-repeat center center / cover;
@@ -1101,7 +1099,7 @@ header > nav ul li a:hover .-bottom{
                 background: url(images/wwdc-design-awards-cube.jpg) no-repeat center center / cover;
             }
             #news2:hover .newsImage{
-                background: url(images/wwdc_sj_keynote_tim_cook_opening_full.jpg.large.jpg) no-repeat center center / cover;
+                background: url(images/wwdc_sj_keynote_tim_cook_opening_full.jpg.large.jpg) no-repeat center top / cover;
             }
             #news3:hover .newsImage{
                 background: url(images/homepod_white_shelf_inline.jpg.large.jpg) no-repeat center center / cover; 
@@ -1175,7 +1173,7 @@ header > nav ul li a:hover .-bottom{
                 background: url(images/wwdc-design-awards-cube.jpg) no-repeat center center / cover;
             }
             #news2:hover .newsImage{
-                background: url(images/wwdc_sj_keynote_tim_cook_opening_full.jpg.large.jpg) no-repeat center center / cover;
+                background: url(images/wwdc_sj_keynote_tim_cook_opening_full.jpg.large.jpg) no-repeat center top / cover;
             }
             #news3:hover .newsImage{
                 background: url(images/homepod_white_shelf_inline.jpg.large.jpg) no-repeat center center / cover; 
