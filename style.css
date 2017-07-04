@@ -184,38 +184,52 @@ header > nav ul li a:hover .-bottom{
   100%{background-position:100% 50%}
 }
 .bag{
-    width: 10%;   
+    width: 10%;
 }
-.bagImage{
-    }
-.open-bag{
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    right: 0;
-    top: 0;
+.shopBt{
+    position: relative;
+    width: 80px;
+    height: 80px;
     float: right;
-    width: 100px;
-    height: 100px;
     background: url(images/shopping-bag.svg) no-repeat center center;
-    background-size: 36px; 
-
+    background-size: 36px;
 }
 .openedBag{
-    position: relative;
-    z-index: 10;
-    margin-top: 100px;
-    margin-right: 380px;
+    position: absolute;
+    right: 20px;
+    top: 80px;
+    width: 0px;
     height: 200px;
-    background-color: white;
-    opacity: .5;
-    /*overflow: hidden;*/
+    overflow: hidden;
+    z-index: 10;
+    background-color: rgba(255,255,255,.8);
+    border: 1px solid darkgray;
     transition: all 1s ease-in-out;
 }
-#shoppingBag:checked .openedBag{
+#shoppingBag:checked ~ .shopBt .openedBag{
     overflow: visible;
-    
+    width: 200px;
     opacity: 1;
+}
+.bag ul li a span{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+}
+.bagList{
+    background: url(images/bag.svg) no-repeat center center / contain;
+}
+.bagFav{
+    background: url(images/favorites.svg) no-repeat center center / contain;
+}
+.bagOrder{
+    background: url(images/orders.svg) no-repeat center center / contain;
+}
+.bagAc{
+    background: url(images/account.svg) no-repeat center center / contain;
+}
+.bagLog{
+    background: url(images/signIn.svg) no-repeat center center / contain;
 }
     @media screen and (max-width: 768px) and (min-width: 413px){
         header > nav{
@@ -662,8 +676,8 @@ header > nav ul li a:hover .-bottom{
 }
 .rbHoverI{
     position: absolute;
-    bottom: 0%;
-    left: 0;
+    bottom: 10px;
+    right: 10px;
     background: url(images/logo_watch_series_2_large.png) no-repeat center center;
     width: 184px;
     height: 20%;
@@ -781,9 +795,12 @@ header > nav ul li a:hover .-bottom{
             margin-bottom: 10px;
         }
         .watch{
-            background: url(images/hero_large.jpg) no-repeat center center / cover;
+            background: url(images/hero_large.jpg) no-repeat center center / contain;
             width: 100%;
             height: 100%;
+        }
+        .rbHoverI{
+            background: url(images/logo_watch_series_2_large.png) no-repeat center center / contain;
         }
     }
     @media screen and (max-width: 412px){
@@ -935,6 +952,9 @@ header > nav ul li a:hover .-bottom{
             width: 100%;
             height: 100%;
         }
+        .rbHoverI{
+            background: url(images/logo_watch_series_2_large.png) no-repeat center center / contain;
+        }
         
     }
 
@@ -1032,19 +1052,19 @@ header > nav ul li a:hover .-bottom{
     background: url(images/homepod_white_shelf_inline.jpg.large.jpg) no-repeat center center / cover; 
 }
 #news1:hover{
-    border: 1px solid black;
+    border: 1px solid darkgray;
     transform: translate(5px,-5px);
-    box-shadow: -7px 7px 0px #333, -14px 14px 0px #111;
+    box-shadow: -7px 7px 0px #eee, -14px 14px 0px #bbb;
 }
 #news2:hover{
-    border: 1px solid black;
+    border: 1px solid dimgray;
     transform: translate(0px,-5px);
-    box-shadow: 0px 7px 0px #666, 0px 14px 0px #aaa;
+    box-shadow: 0px 7px 0px #bbb, 0px 14px 0px #eee;
 }
 #news3:hover{
-    border: 1px solid black;
+    border: 1px solid darkgray;
     transform: translate(-5px,-5px);
-    box-shadow: 7px 7px 0px #666, 14px 14px 0px #aaa;
+    box-shadow: 7px 7px 0px #eee, 14px 14px 0px #bbb;
 }
 #news1:hover .newsImage{
     background: url(images/wwdc-design-awards-blackbox.gif) no-repeat center center / cover;
@@ -1294,7 +1314,7 @@ footer{
             padding: 0 8px;
 }
         .licensee span{
-            white-space: nowrap;
+            white-space: normal;
             font-size: 12px;
         }
     }
