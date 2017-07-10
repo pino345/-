@@ -481,6 +481,25 @@ header > nav ul li a:hover .-bottom{
             cursor: pointer;
         }
     }
+    @media screen and (max-width: 736px) and (orientation: landscape){
+        .mlImage{
+            width: 120px;
+            height: 120px;
+            background: url(images/Apple_logo_white.png) no-repeat center center / contain;
+        }
+        .mainLogo{
+            align-items: center;
+            justify-content: center;
+    width: 80%;
+    margin-top: -50px;
+    display: flex;
+    flex-flow: column;
+        }
+        .mltext{
+            font-size: 12px;
+        }
+
+    }
 #firstFloor{
     width: 100%;
     height: 100vh;
