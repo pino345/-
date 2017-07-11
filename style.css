@@ -1,13 +1,14 @@
-*{ margin: 0; padding: 0;}
+*{ margin: 0; padding: 0; font-family: 'Noto Sans KR';}
 li{ list-style: none;}
 a{ text-decoration: none; color: #222;}
 input[ type="checkbox"]{ display: none;}
 label{ cursor: pointer;}
 
 header{
+    display: flex;
     width: 100%;
     height: 100vh;
-    display: flex;
+    min-height: 640px;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eac0aa+0,d2c0ac+7,2fbdb9+50,1a989d+70,023545+100 */
     background: #eac0aa; /* Old browsers */
     background: -moz-linear-gradient(left, #eac0aa 0%, #d2c0ac 7%, #2fbdb9 50%, #1a989d 70%, #023545 100%); /* FF3.6-15 */
@@ -16,18 +17,24 @@ header{
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eac0aa', endColorstr='#023545',GradientType=1 ); /* IE6-9 */
 }
 header > nav{
-    align-self: center;
+    display: flex;
     width: 10%;
+    height: 100vh;
+    min-height: 640px;
+}
+header > nav ul{
+    align-self: center;
 }
 header > nav ul li a{
+    position: relative;
     display: block;
-    color: white;
-    padding: 0.7em calc(0.7em * 1.2);
+    width: 160px;
     margin: 10px 0;
     margin-left: 5px;
-    width: 160px;
-    position: relative;
+    padding: 0.7em calc(0.7em * 1.2);
     border: 3px solid transparent;
+    color: white;
+    font-weight: 300;
 }
 header > nav ul li a span{
     display: block;
@@ -41,22 +48,21 @@ header > nav ul li a span{
     transition: transform 0.4s cubic-bezier(.2,0,0,1) 0.4s;
 }
 .navi:before{
-    position: absolute;
     content: "";
+    z-index: -1;
+    position: absolute;
     left: -10px;
     right: 100%;
     height: 3px;
     background: white;
-    z-index: -1;
+    opacity: 1;
     transition: all 0.8s cubic-bezier(1,0,.37,1) 0.2s,
       right 0.2s cubic-bezier(.04,.48,0,1) 0.6s,
       left 0.4s cubic-bezier(.04,.48,0,1) 0.6s;
-    transform-origin: left;
-    opacity: 1;
 }
 .line{
-    background: white;
     position: absolute;
+    background: white;
 }
 .-right, .-left{
     width: 3px;
@@ -164,7 +170,7 @@ header > nav ul li a:hover .-bottom{
     display: inline-block;
     color: white;
     font-size: 40px;
-    font-weight: bold;
+    font-weight: 900;
 }
 .different{
     border-radius: 10px;
@@ -174,7 +180,12 @@ header > nav ul li a:hover .-bottom{
 .different b{
     border-radius: 10px;
     animation: tGradation 10s linear infinite;
-    background: linear-gradient(90deg, rgba(150,48,30,1) 0%,rgba(199,201,88,1) 10%,rgba(28,147,46,1) 20%,rgba(74,165,168,1) 30%,rgba(89,90,165,1) 40%,rgba(84,16,67,1) 50%,rgba(28,58,63,1) 60%,rgba(82,175,183,1) 70%,rgba(78,170,76,1) 80%,rgba(150,48,30,1) 90%,rgba(199,201,88,1) 100%);
+   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f2ccd0+1,a8d5ed+11,88dcf3+22,d8b3a9+34,f3b8ae+45,d8b3a9+55,88dcf3+66,a8d5ed+78,f2ccd0+88,a8d5ed+100 */
+background: #f2ccd0; /* Old browsers */
+background: -moz-linear-gradient(left, #f2ccd0 1%, #a8d5ed 11%, #88dcf3 22%, #d8b3a9 34%, #f3b8ae 45%, #d8b3a9 55%, #88dcf3 66%, #a8d5ed 78%, #f2ccd0 88%, #a8d5ed 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, #f2ccd0 1%,#a8d5ed 11%,#88dcf3 22%,#d8b3a9 34%,#f3b8ae 45%,#d8b3a9 55%,#88dcf3 66%,#a8d5ed 78%,#f2ccd0 88%,#a8d5ed 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, #f2ccd0 1%,#a8d5ed 11%,#88dcf3 22%,#d8b3a9 34%,#f3b8ae 45%,#d8b3a9 55%,#88dcf3 66%,#a8d5ed 78%,#f2ccd0 88%,#a8d5ed 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2ccd0', endColorstr='#a8d5ed',GradientType=1 ); /* IE6-9 */
     background-size: 1000% 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -221,7 +232,7 @@ header > nav ul li a:hover .-bottom{
     border: 1px solid darkgray;
     transform: translate(0px,0px);
     transition: all 1s ease-in-out;
-    z-index: 2;
+    opacity: 0;
 }
 #shoppingBag:checked ~ .openedBag{
     overflow: visible;
@@ -261,13 +272,9 @@ header > nav ul li a:hover .-bottom{
     background: url(images/signIn.svg) no-repeat center center / contain;
 }
     @media screen and (max-width: 768px) and (min-width: 413px){
-        header > nav{
-            width: 10vw;
-            height: 100vh;
-        }
         .menu-open-button{
             z-index: 11;
-            position: absolute;
+            position: relative;
             width: 80px;
             height: 80px;
             text-align: center;
@@ -302,6 +309,13 @@ header > nav ul li a:hover .-bottom{
         #mobileNav:checked ~ .menu-open-button .line-3{
             transform: translate(0,0) rotate(-45deg); 
         }
+        #mobileNav:checked ~ ul{
+            opacity: 1;
+            width: 50vw;
+            height: 100vh;
+            max-height: 1024px;
+            box-sizing: border-box;
+        }
         header > nav ul{
             position: absolute;
             width: 0vw;
@@ -314,11 +328,16 @@ header > nav ul li a:hover .-bottom{
             opacity: 0;
             transition: all 1s ease-in-out;
         }
-        #mobileNav:checked ~ ul{
-            opacity: 1;
-            width: 50vw;
+        header{
+            display: flex;
+            width: 100%;
             height: 100vh;
-            box-sizing: border-box;
+            min-height: 640px;
+        }
+        header > nav{
+            width: 10vw;
+            height: 100vh;
+            max-height: 1024px;
         }
         header > nav ul li a{
             padding: 0;
@@ -490,13 +509,9 @@ header > nav ul li a:hover .-bottom{
         .mainLogo{
             align-items: center;
             justify-content: center;
-    width: 80%;
-    margin-top: -50px;
-    display: flex;
-    flex-flow: column;
         }
         .mltext{
-            font-size: 12px;
+            font-size: 6vw;
         }
 
     }
@@ -569,8 +584,9 @@ header > nav ul li a:hover .-bottom{
     transform: translateY(0);
 }
 .ltHoverT{
+    z-index: 10;
     position: absolute;
-    top: 100%;
+    top: 50%;
     left: 5%;
     text-align: center;
     font-size: 2vw;
@@ -584,7 +600,7 @@ header > nav ul li a:hover .-bottom{
     font-weight: bold;
 }
 #leftTop:hover .ltHoverT{
-    top: 60%;
+    top: -50px;
 }
 .ios11T{
     z-index: 10;
