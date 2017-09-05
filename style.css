@@ -229,7 +229,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2ccd0', end
     white-space: nowrap;
     z-index: 10;
     background-color: rgba(255,255,255,.5);
-    border: 1px solid darkgray;
+    border: 1px solid #ddd;
     transform: translate(0px,0px);
     transition: all 1s ease-in-out;
     opacity: 0;
@@ -253,8 +253,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2ccd0', end
 }
 .bag ul li a span{
     display: inline-block;
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
 }
 .bagList{
     background: url(images/bag.svg) no-repeat center center / contain;
