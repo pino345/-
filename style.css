@@ -201,6 +201,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2ccd0', end
     position: relative;
     width: 80px;
     height: 80px;
+    margin-right: 10px;
     float: right;
     background: url(images/shopping-bag.svg) no-repeat center center;
     background-size: 36px;
@@ -237,21 +238,21 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2ccd0', end
 #shoppingBag:checked ~ .openedBag{
     overflow: visible;
     width: 200px;
-    height: 200px;
+    height: 150px;
     opacity: 1;
     transform: translate(35px,70px);
 }
 .bag ul{
     position: absolute;
+    top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
 }
 .bag ul li{
     padding-bottom: 5px;
     border-top: 1px solid #ddd;
 }
-.bag ul li a span{
+.bag ul a li span{
     display: inline-block;
     width: 15px;
     height: 15px;
@@ -270,6 +271,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2ccd0', end
 }
 .bagLog{
     background: url(images/signIn.svg) no-repeat center center / contain;
+}
+.bag ul li:hover{
+    background-color: #eee;
 }
     @media screen and (max-width: 768px) and (min-width: 413px){
         .menu-open-button{
@@ -671,11 +675,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2ccd0', end
 }
 .ltHoverT span{
     display: block;
+    text-shadow: 1px 1px 1px white;
     font-size: 3vw;
     font-weight: bold;
-}
-#leftTop:hover .ltHoverT{
-    top: -50px;
 }
 .ios11T{
     z-index: 10;
@@ -790,6 +792,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2ccd0', end
     background: url(images/sports_large.jpg) no-repeat center center / cover;
     width: 100%;
     height: 100%;
+    transition: all 1s ease-in-out;
 }
 .watch:before{
     content: "";
@@ -799,6 +802,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2ccd0', end
     position: absolute;
     top: 0;
     opacity: .5;
+}
+#rightBottom:hover .watch{
+    transform: scale(1.4);
 }
 .watchT{
     position: absolute;
